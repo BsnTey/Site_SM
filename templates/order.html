@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Спортмастер — спортивный магазин для всей семьи!</title>
+    <link rel="icon" href="{{ url_for('static', filename='/img/favicon.ico')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/styles.css')}}" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="main">
+
+    <div class="header">
+
+        <a class="back-arrow" href="#">
+            <img src="static/img/arrow.svg" alt="Назад">
+        </a>
+        <p class="text17-black order-number">
+            Заказ №<span id="number_order"></span>
+        </p>
+    </div>
+
+
+    <div class="date-create">
+        <p class="date-create-item text14-grey">
+            Создан <span id="create-date"></span>
+        </p>
+        <a class="button-check" id="check-button">
+            <span id="check-button-text"></span>
+        </a>
+    </div>
+
+    <div class="about-address">
+        <div class="about-address-info" id="about-address-info-id">
+            <p class="type-order text16-black">
+                <span id="title-type-order"></span>
+            </p>
+            <p class="address text14-black">
+                <span id="address-item"></span>
+            </p>
+            <p class="operating-mode text14-black" id="operating-mode-id">
+                Ежедневно: с 10:00 до 22:00
+            </p>
+        </div>
+        <div class="button-route" id="button-route-id">
+            <img src="static/img/route.svg" alt="Назад" width="20" height="20">
+        </div>
+    </div>
+    <div id="trek-number-block">
+        <p class="type-order text16-black">
+            Трек-номер
+        </p>
+        <div id="trek-number-link-block">
+            <p class="text14-black">
+                <span id="trek-number-url"></span>
+            </p>
+            <a href="" target="_blank" id="trek-number-link">
+                <img src="static/img/link.svg" alt="Ссылка" width="20" height="20">
+            </a>
+        </div>
+    </div>
+    <div class="date-delivery">
+        <p class="text16-black">
+            <span id="date-delivery-type"></span>
+        </p>
+        <p class="text14-black">
+            <span id="receiving-date-from"></span>
+            <span id="receiving-date-to"></span>
+            <span id="receiving-time-slot"></span>
+        </p>
+    </div>
+
+    <div class="payment-method-info">
+        <p class="text16-black">
+            Способ оплаты
+        </p>
+        <div class="payment-method">
+            <p class="text14-black">
+                <span id="payment-method-text"></span>
+            </p>
+            <p class="text14-orange">
+                <span id="is-payed"></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="about-price">
+        <div class="count-items">
+            <p class="text14-grey">
+                <span id="quantity-items"></span>
+                <span id="quantity-items-name"></span>
+            </p>
+            <p class="price-items text14-grey">
+                <span id="price-items-id"></span> ₽
+            </p>
+        </div>
+        <div class="discount-bonus" id="catalog-discount-block">
+            <p class="text14-grey">
+                Скидка
+            </p>
+            <p class="count-bonus text14-grey">
+                -<span id="catalog-discount"></span> ₽
+            </p>
+        </div>
+        <div class="discount-bonus" id="promocode-discount-block">
+            <p class="text14-grey">
+                Скидка по промокоду
+            </p>
+            <p class="count-bonus text14-grey">
+                -<span id="promocode-discount"></span> ₽
+            </p>
+        </div>
+        <div class="discount-bonus" id="total-bonuses-used-block">
+            <p class="text14-grey">
+                Оплата бонусами
+            </p>
+            <p class="count-bonus text14-grey">
+                -<span id="total-bonuses-used"></span> ₽
+            </p>
+        </div>
+
+
+        <div class="total-price">
+            <p class="text14-black-med">
+                Итого
+            </p>
+            <p class="count-total-price text14-black-med">
+                <span id="total-cost"></span> ₽
+            </p>
+        </div>
+    </div>
+
+    <div class="about-buyer">
+        <p class="text16-black">
+            Получатель
+        </p>
+        <p class="fio text14-black">
+            <span id="fio-receiver"></span>
+        </p>
+        <p class="email-buyer text14-black">
+            <span id="email-receiver"></span>
+        </p>
+        <p class="tel-number text14-black">
+            +7 <span id="number-receiver"></span>
+        </p>
+    </div>
+
+    <div class="about-order">
+        <p class="about-order-count text18-black">
+            <span id="quantity-items-order"></span>
+            <span id="quantity-items-name-order"></span>
+            в заказе
+        </p>
+        <ul class="about-order-section">
+        </ul>
+    </div>
+    <div class="buttons-footer">
+        <div class="button-ask" id="electronic-receipt">
+            <p>
+                Электронный чек
+            </p>
+        </div>
+        <div class="button-ask">
+            <p>
+                Задать вопрос по заказу
+            </p>
+        </div>
+        <div class="button-ask" id="cancelled-order">
+            <p>
+                Отменить заказ
+            </p>
+        </div>
+    </div>
+    <div class="footer-menu">
+        <ul>
+            <li class="Home">
+                <img class="grey-wrap" src="static/img/home.svg" width="19" height="19">
+            </li>
+            <li class="Catalog">
+                <img class="grey-wrap" class="menu-svg" src="static/img/search.svg">
+            </li>
+            <li class="Menu">
+                <img src="static/img/menu.png" width="19" height="19">
+            </li>
+            <li class="Cart">
+                <img class="grey-wrap" src="static/img/cart.svg" width="24" height="24">
+            </li>
+            <li class="Profile">
+                <img class="grey-wrap current-link" src="static/img/person.svg" width="19" height="19">
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="../static/scripts/order_script.js" type="text/javascript"></script>
+</body>
+</html>
